@@ -1,0 +1,7 @@
+comands.txt
+node_modules/
+public/uploads/*.jpg
+public/uploads/*.webp
+public/uploads/*.png
+public/uploads/*.svg
+public/uploads/*.avi
