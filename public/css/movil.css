@@ -1,0 +1,49 @@
+@media (max-width: 767px) {
+  
+  #main-header {
+    position: absolute !important;
+  }
+
+  #main-header #header-content {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 24px 16px 0 !important;
+    gap: 64px !important;
+  }
+
+  /* El primer contenedor del HTML contiene el logo */
+  #main-header #header-content > div:first-child {
+    order: 1 !important;
+    display: flex !important;
+    flex: 0 0 auto !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  #main-header #header-logo {
+    display: block !important;
+    width: min(60vw, 240px) !important;
+    max-width: 60vw !important;
+    height: auto !important;
+    margin: 0 auto !important;
+  }
+
+  /* El segundo contenedor contiene el título */
+  #main-header #header-content > div:last-child {
+    order: 2 !important;
+    display: flex !important;
+    flex: 0 0 auto !important;
+    justify-content: center !important;
+    width: 100% !important;
+    align-self: flex-end !important;
+  }
+
+  #main-header #header-title {
+    width: 100% !important;
+    margin: 0 !important;
+    text-align: center !important;
+  }
+}

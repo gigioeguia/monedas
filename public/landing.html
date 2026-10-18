@@ -3,198 +3,54 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Nuestras Categorías</title>
-    <link rel="stylesheet" href="/css/tailwind.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Catalogo de monedas</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/css/tailwind.css">
+    <link rel="stylesheet" href="/css/movil.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            color: #333;
-            background: #f5f5f5;
-        }
-
-        header {
-            background: #ffe600;
-            padding: 16px 5%;
-        }
-
-        .topbar {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #222;
-            white-space: nowrap;
-        }
-
-        .search {
-            display: flex;
-            flex: 1;
-        }
-
-        .search input {
-            width: 100%;
-            padding: 12px;
-            border: 0;
-            border-radius: 5px 0 0 5px;
-            font-size: 15px;
-        }
-
-        .search button {
-            padding: 0 18px;
-            border: 0;
-            border-radius: 0 5px 5px 0;
-            background: #eee;
-            cursor: pointer;
-        }
-
-        .account {
-            white-space: nowrap;
-            font-size: 14px;
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 14px auto 0;
-            display: flex;
-            gap: 20px;
-            font-size: 14px;
-        }
-
-        nav a {
-            color: #333;
-            text-decoration: none;
-        }
-
-        main {
-            max-width: 1200px;
-            margin: 28px auto;
-            padding: 0 16px;
-        }
-
-        .breadcrumbs {
-            margin-bottom: 18px;
-            color: #777;
-            font-size: 14px;
-        }
-
-        h1 {
-            margin: 0 0 20px;
-            font-size: 24px;
-        }
-
-        .products {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 18px;
-        }
-
-        .card {
-            overflow: hidden;
-            border-radius: 8px;
-            background: #fff;
-            box-shadow: 0 1px 4px #00000014;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 14px #0000001c;
-        }
-
-        .card img {
-            display: block;
-            width: 100%;
-            height: 210px;
-            object-fit: contain;
-            padding: 16px;
-            background: #fff;
-        }
-
-        .details {
-            padding: 16px;
-            border-top: 1px solid #eee;
-        }
-
-        .price {
-            margin: 0 0 8px;
-            font-size: 24px;
-            color: #222;
-        }
-
-        .shipping {
-            margin: 0 0 8px;
-            color: #16834b;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        .name {
-            margin: 0;
-            min-height: 40px;
-            font-size: 15px;
-            font-weight: normal;
-            line-height: 1.4;
-        }
-
-        @media (max-width: 900px) {
-            .products {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-        }
-
-        @media (max-width: 600px) {
-            header {
-                padding: 14px 16px;
-            }
-
-            .topbar {
-                flex-wrap: wrap;
-                gap: 12px;
-            }
-
-            .search {
-                order: 3;
-                flex-basis: 100%;
-            }
-
-            .account {
-                margin-left: auto;
-            }
-
-            nav {
-                overflow-x: auto;
-                white-space: nowrap;
-            }
-
-            .products {
-                grid-template-columns: 1fr;
-            }
-
-            .card img {
-                height: 240px;
-            }
-        }
-    </style>
-
+    <script src="/js/header.js" defer></script>
 </head>
 
-<body class="bg-slate-100 p-8">
-    <main class="max-w-7xl mx-auto">
-        <h1 class="text-3xl font-bold mb-8 text-center">Explora nuestras categorías</h1>
+<body class="m-0 font-[Arial,sans-serif] text-[#d39e00] bg-[#5b5b5b]">
+
+    <!-- Encabezado que permanece visible al hacer scroll -->
+    <header id="main-header" class="fixed inset-x-0 top-0 z-50 h-screen overflow-hidden
+           border-b border-neutral-600
+           bg-[url('/image/moneda2.jpg')] bg-cover bg-center bg-no-repeat
+           transition-[height] duration-300 ease-out">
+
+        <div id="header-content" class="grid h-full grid-cols-1 grid-rows-[auto_auto] content-center
+            items-center gap-3 px-4
+            md:grid-cols-[minmax(0,1fr)_auto] md:grid-rows-1 md:gap-8
+            md:px-8 lg:px-12">
+
+            <!-- Primero en móvil; columna derecha en pantallas medianas y grandes -->
+            <div class="flex items-center justify-center md:order-2 md:justify-end">
+                <img id="header-logo" src="image/logo_trans.png" alt="Monedas Antiguas Eguia" class="w-48 max-w-[70vw] object-contain transition-[width] duration-500
+                    md:w-40 lg:w-48">
+            </div>
+
+            <!-- Debajo del logo en móvil; columna izquierda en pantallas grandes -->
+            <div class="flex min-w-0 items-center justify-center md:order-1 md:justify-start">
+                <h1 id="header-title" class="w-full max-w-5xl text-center font-black uppercase leading-[1.05]
+                   tracking-tight text-[#d39e00] transition-[font-size,transform] duration-500
+                   md:text-left">
+                    Valoramos su colección con<br>
+                    <span class="text-[#ffce3a]">transparencia técnica,</span><br>
+                    para que usted decida el siguiente paso con total seguridad.
+                </h1>
+            </div>
+
+        </div>
+
+
+    </header>
+    <div id="header-spacer" class="h-[95vh]" aria-hidden="true"></div>
+
+    <!-- El contenido sigue en el flujo normal del documento -->
+    <main id="main-content" class="mx-auto max-w-[1200px] px-4 pt-12 pb-12">
+        <h1 class="mb-5 text-2xl font-bold">Explora nuestras categorías</h1>
 
         <div class="swiper categorySwiper">
             <div id="categories-container" class="swiper-wrapper">
@@ -225,23 +81,23 @@
 
         </section>
 
-        <section class="products mt-12" id="products" aria-label="Catálogo de productos" aria-live="polite">
+        <section class="grid grid-cols-1 gap-[18px] min-[601px]:grid-cols-2 min-[901px]:grid-cols-4" id="products"
+            aria-label="Catálogo de productos" aria-live="polite">
             <p class="loading">Cargando productos…</p>
         </section>
 
     </main>
 
     <script>
-
         const productsContainer = document.querySelector('#products');
 
         function escapeHtml(value) {
             return String(value ?? '').replace(/[&<>"']/g, character => ({
-            '&': '&amp;',
-            '<': '&lt;',
-            '>': '&gt;',
-            '"': '&quot;',
-            "'": '&#039;'
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
             })[character]);
         }
 
@@ -266,27 +122,27 @@
                     const image = escapeHtml(product.image_url || 'https://placehold.co/400x300?text=Producto');
 
                     return `
-                    <article class="card">
-                        <img src="${image}" alt="${name}" loading="lazy">
-                        <div class="details">
-                        <p class="price">
+                    <article class="overflow-hidden rounded-lg bg-white shadow-[0_1px_4px_#00000014] transition-[transform,box-shadow] duration-200 hover:-translate-y-[3px] hover:shadow-[0_5px_14px_#0000001c]">
+                        <img src="${image}" alt="${name}" loading="lazy" class="block h-[210px] w-full bg-white object-contain p-4">
+                        <div class="border-t border-[#eee] p-4">
+                        <p class="mb-2 text-2xl text-[#222]">
                             ${Number.isFinite(price)
                             ? price.toLocaleString('es-MX', {
                                 style: 'currency',
                                 currency: 'MXN'
-                                })
+                            })
                             : 'Precio no disponible'}
                         </p>
-                        <p class="shipping">Envío gratis</p>
-                        <h2 class="name">${name}</h2>
+                        <p class="mb-2 text-sm font-bold text-[#16834b]">Envío gratis</p>
+                        <h2 class="m-0 min-h-10 text-[15px] font-normal leading-[1.4]">${name}</h2>
                         </div>
                     </article>
                     `;
                 }).join('');
             } catch (error) {
-            console.error('No se pudieron cargar los productos:', error);
-            productsContainer.innerHTML =
-                '<p>No fue posible cargar el catálogo. Intenta de nuevo más tarde.</p>';
+                console.error('No se pudieron cargar los productos:', error);
+                productsContainer.innerHTML =
+                    '<p>No fue posible cargar el catálogo. Intenta de nuevo más tarde.</p>';
             }
         }
 
@@ -316,23 +172,15 @@
                     slide.dataset.id = cat.id;
 
                     slide.innerHTML = `
-                        <article class="bg-white 
-                            rounded-2xl 
-                            shadow-lg 
-                            hover:shadow-2xl 
-                            transition-all 
-                            duration-300 
-                            overflow-hidden 
-                            h-full 
-                            min-h-[420px]">
+                        <article class="overflow-hidden rounded-lg bg-white shadow-[0_1px_4px_#00000014] transition-[transform,box-shadow] duration-200 hover:-translate-y-[3px] hover:shadow-[0_5px_14px_#0000001c]">
                             ${cat.image_url
                             ? `<img
                                     src="${cat.image_url}"
                                     alt="${cat.name}"
-                                    class="w-full h-64 object-cover"
+                                    class="block h-[210px] w-full bg-white object-contain p-4"
                                 >`
                             : ''}
-                            <div class="p-5">
+                            <div class="border-t border-[#eee] p-4">
                                 <h2 class="font-bold text-xl text-slate-800">
                                     ${cat.name}
                                 </h2>
@@ -457,7 +305,7 @@
                             <img
                                 src="${product.image_url}"
                                 alt="${product.name}"
-                                class="w-full h-56 object-cover">
+                                class="block h-[210px] w-full bg-white object-contain p-4">
                         ` : ''}
 
                         <div class="p-4">
